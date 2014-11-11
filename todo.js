@@ -36,7 +36,6 @@ toDo.who = "stephanie";
 toDo.setDone = true;
 var dishes = [toDo.task = "wash dishes", toDo.who = "stephanie", toDo.setDone = true];
 var laundry = [toDo.task = "laundry", toDo.who = "stephanie", toDo.setDone = false];
-var toDo = [dishes];
 
 function ToDo() {
 	this.task = String;
