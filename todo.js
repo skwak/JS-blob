@@ -28,10 +28,33 @@ var toDo = {
 
 var dishes = {
   task: toDo.task = "wash dishes",
-  who: toDo.who = "stephanie",
+  who: toDo.who = "stephanie"
 };
 
 toDo.task = "wash dishes";
 toDo.who = "stephanie";
 toDo.setDone = true;
 var dishes = [toDo.task, toDo.who, toDo.setDone];
+var toDo = ["cleaning", "sleeping"];
+
+function ToDo() {
+	this.task = String;
+  this.who = String;
+  this.done = Boolean;
+  this.getDone = function() {
+      if (this.done === true) {
+        return true;
+      }
+      elsif (this.done === false); {
+        return false;
+      }
+  };
+  this.setDone = function(boolean) {
+      this.done = boolean;
+	};
+}
+
+var task1 = new ToDo();
+task1.task = "dishes";
+task1.who = "zomawia";
+task1.setDone(true);
