@@ -21,12 +21,29 @@ function init() {
   planet2.innerHTML = "<em>What's going on?</em>";
   var planet3 = document.getElementById("blueplanet");
   planet3.innerHTML = "Danger Danger!";
+  var image = document.getElementById("catplanet");
+  image.onclick = imageChange1;
+  var image2 = document.getElementById("catplanet2");
+  image2.onclick = imageChange2;
 }
 
-function imageChange() {
-  var image = document.getElementById("catplanet");
-  image.setAttribute("src", "Cat_Planet_cat.gif");
+function imageChange1() {
+  document.getElementById("catplanet").setAttribute("src", "Cat_Planet_cat.gif");
 }
+
+function imageChange2() {
+  document.getElementById("catplanet2").setAttribute("src", "Cat_Planet_cat.gif");
+  // var image2 = document.getElementById("catplanet2");
+  // image2.setAttribute("src", "Cat_Planet_cat.gif");
+}
+
+
+// if we wanted to set all images to change when clicked
+// var images = document.getElementsByTagName("img");
+// for (var i = 0; i < images.length; i++) {
+//   var theImage = images[i];
+//   theImage.setAttribute("src", "https://33.media.tumblr.com/tumblr_lr6dk4Ne9U1r0cvsoo1_1315465717_cover.jpg");
+// };
 
 // this is to change the image on any click
 // window.onclick = imageChange;
@@ -40,7 +57,8 @@ function imageChange() {
 
 </head>
 <body>
-  <img id = "catplanet" onclick="imageChange()" src="nyan_cat_planet_by_jollyspacefox-d4mqxw3.jpg">
+  <img id = "catplanet" src="nyan_cat_planet_by_jollyspacefox-d4mqxw3.jpg">
+  <img id = "catplanet2" src="https://33.media.tumblr.com/tumblr_lr6dk4Ne9U1r0cvsoo1_1315465717_cover.jpg">
   <h1>Green Planet</h1>
   <p id="greenplanet" class="red">All is well</p>
   <h1>Red Planet</h1>
