@@ -34,3 +34,4 @@ var dishes = {
 toDo.task = "wash dishes";
 toDo.who = "stephanie";
 toDo.setDone = true;
+var dishes = [toDo.task, toDo.who, toDo.setDone];
