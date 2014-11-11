@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Planets</title>
+<style>
+.red {
+  background-color: red;
+  }
+</style>
+
+</head>
+<body>
+  <h1>Green Planet</h1>
+  <p id="greenplanet" class="red">All is well</p>
+  <h1>Red Planet</h1>
+  <p id="redplanet" class="red">Nothing to report</p>
+  <h1>Blue Planet</h1>
+  <p id="blueplanet" class="red">All systems A-OK</p>
+
+<script>
+var planet = document.getElementById("greenplanet");
+planet.innerHTML = "Help! We've been hit!";
+var planet2 = document.getElementById("redplanet");
+planet2.innerHTML = "<em>What's going on?</em>";
+var planet3 = document.getElementById("blueplanet");
+planet3.innerHTML = "Danger Danger!";
+</script>
+</body>
+</html>
