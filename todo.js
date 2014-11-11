@@ -26,5 +26,7 @@ var toDo = {
   }
 };
 
-toDo.task = "wash dishes";
-toDo.setDone(true);
+var dishes = {
+  task: toDo.task = "wash dishes",
+  who: toDo.who = "stephanie"
+};
