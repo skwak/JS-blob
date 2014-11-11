@@ -7,10 +7,40 @@
 .red {
   background-color: red;
   }
+img {
+  width: 20em;
+}
 </style>
+
+<script>
+window.onload = init;
+function init() {
+  var planet = document.getElementById("greenplanet");
+  planet.innerHTML = "Help! We've been hit!";
+  var planet2 = document.getElementById("redplanet");
+  planet2.innerHTML = "<em>What's going on?</em>";
+  var planet3 = document.getElementById("blueplanet");
+  planet3.innerHTML = "Danger Danger!";
+}
+
+function imageChange() {
+  var image = document.getElementById("catplanet");
+  image.setAttribute("src", "Cat_Planet_cat.gif");
+}
+
+// this is to change the image on any click
+// window.onclick = imageChange;
+//
+// function imageChange() {
+//   var image = document.getElementById("catplanet");
+//   image.setAttribute("src", "Cat_Planet_cat.gif");
+// }
+
+</script>
 
 </head>
 <body>
+  <img id = "catplanet" onclick="imageChange()" src="nyan_cat_planet_by_jollyspacefox-d4mqxw3.jpg">
   <h1>Green Planet</h1>
   <p id="greenplanet" class="red">All is well</p>
   <h1>Red Planet</h1>
@@ -18,13 +48,5 @@
   <h1>Blue Planet</h1>
   <p id="blueplanet" class="red">All systems A-OK</p>
 
-<script>
-var planet = document.getElementById("greenplanet");
-planet.innerHTML = "Help! We've been hit!";
-var planet2 = document.getElementById("redplanet");
-planet2.innerHTML = "<em>What's going on?</em>";
-var planet3 = document.getElementById("blueplanet");
-planet3.innerHTML = "Danger Danger!";
-</script>
 </body>
 </html>
