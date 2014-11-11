@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Ada To Do list</title>
+</head>
+<style>
+  .blue {
+    background-color: #04ceee;
+  }
+  .yellow {
+    background-color: #fdd547;
+  }
+</style>
+
+<script>
+window.onload = init;
+
+function init() {
+  var buttonForm = document.getElementById("addButton");
+  buttonForm.onclick = function() {
+    submit(event);
+  };
+}
+
+function submit(event) {
+  event.preventDefault();
+  
+  var newTask = document.getElementById("task");
+  var newListItem = document.createElement("li");
+  newListItem.setAttribute("class", "yellow");
+  newListItem.innerHTML = newTask.value;
+  list.appendChild(newListItem);
+
+
+}
+// tasks triggered by image click
+// function init() {
+//   var catImage = document.getElementById("cat");
+//   catImage.onclick = addStuff;
+// }
+//
+// function addStuff() {
+//   var catImage = document.getElementById("cat");
+//   var answer = prompt("What do you want to add to the list?");
+//   var newListItem = document.createElement("li");
+//   newListItem.innerHTML = answer;
+//
+//   list.appendChild(newListItem);
+//
+// }
+
+
+// tasks triggered by prompts
+// function init() {
+//   var list = document.getElementById("list");
+//
+//     for(var i=0; i < 3; i++) {
+//
+//     var prompted_item = prompt("What do you want to add to the list?");
+//     var newListItem = document.createElement("li");
+//     newListItem.innerHTML = prompted_item;
+//
+//     list.appendChild(newListItem);
+//   }
+// }
+
+</script>
+
+<body>
+<h1>Ada To Do List</h1>
+<img id="cat" src="http://cdn.leanintree.com/Product/13861.jpg">
+
+<form>
+  <input type="text" id="task">
+  <button id="addButton">Add to do list</button>
+</form>
+
+<ul id="list">
+</ul>
+
+</body>
+
+</html>
