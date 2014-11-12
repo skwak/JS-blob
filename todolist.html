@@ -15,6 +15,7 @@
 
 <script>
 window.onload = init;
+listArray = [];
 
 function init() {
   var buttonForm = document.getElementById("addButton");
@@ -25,15 +26,28 @@ function init() {
 
 function submit(event) {
   event.preventDefault();
-  
   var newTask = document.getElementById("task");
   var newListItem = document.createElement("li");
-  newListItem.setAttribute("class", "yellow");
-  newListItem.innerHTML = newTask.value;
+  newListItem.setAttribute("class", "yellow not-done");
+  newListItem.innerHTML = "<input type='checkbox' name='list-item' value='list-task'>" + newTask.value;
+  listArray.push(newTask.value);
   list.appendChild(newListItem);
+  if (listArray.length > 0) {
+    var doneButton = document.createElement("p");
+    doneButton.innerHTML = "<button id='done-button'>Mark as done</button>";
+    list.appendChild(doneButton);
+  }
+}
 
+function markDone() {
+  alert("mark done?");
 
 }
+
+
+
+
+
 // tasks triggered by image click
 // function init() {
 //   var catImage = document.getElementById("cat");
