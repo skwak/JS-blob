@@ -9,9 +9,9 @@ $(function() {
 function submit(event) {
   event.preventDefault();
   var $task = $("#task").val();
-  $("#list").append("<li class='not-done blue'>" + $task + "</li>");
+  $("#list").append("<li class='not-done'>" + $task + "</li>");
   $(".not-done").click(function() {
-    $(this).toggleClass("done").toggleClass("yellow");
+    $(this).toggleClass("done").toggleClass("pink");
     var listItems = document.querySelectorAll("li");
     var doneItems = document.querySelectorAll(".done");
     if (listItems.length === doneItems.length) {

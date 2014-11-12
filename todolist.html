@@ -11,16 +11,25 @@
     font-size: 1.2em;
   }
 
-  .blue {
-    background-color: #04ceee;
+  .not-done {
+    background-color: #a8d9de;
   }
 
-  .yellow {
-    background-color: #fdd547;
+  .pink {
+    background-color: #f7cfe5;
   }
 
   ul li {
     list-style-type: none;
+    width:15em;
+    border-top: 1px solid #000000;
+  }
+
+  button {
+    font-family: "Helvetica Neue";
+    font-size: .7em;
+    background-color: #ffffff;
+    border-width: .1em;
   }
 
 </style>
@@ -31,15 +40,16 @@
 </script>
 
 <body>
-<h1>Ada To Do List</h1>
-<img id="cat" src="http://cdn.leanintree.com/Product/13861.jpg">
+<h1>todolist</h1>
 
 <form>
   <input type="text" id="task">
-  <button id="addButton">Add to do list</button>
+  <button id="addButton">Add Task</button>
 </form>
 
-<ul id="list"></ul>
+<ul id="list">
+
+</ul>
 
 </body>
 
