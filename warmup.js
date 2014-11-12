@@ -4,13 +4,13 @@ window.onload = init;
 
 function init() {
   $("#clickme").click(function() {
-    $("#clickme").addClass("blue").css("text-align", "center");
+    $(this).addClass("blue").css("text-align", "center");
   });
   $("#clickthis").click(function() {
-    $("#clickthis").css("background-color", "yellow").css("color", "gray").css("text-align", "center");
+    $(this).css("background-color", "yellow").css("color", "gray").css("text-align", "center");
   });
   $(".rand").click(function() {
-    $(".rand").css("background-color", "gray");
+    $(this).css("background-color", "green");
   });
 
 }
