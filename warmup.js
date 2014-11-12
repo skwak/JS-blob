@@ -1,12 +1,38 @@
+// start jQuery
+
 window.onload = init;
 
-function init () {
-  var div = document.getElementById("clickme");
-  div.onclick = clickHandler;
+function init() {
+  $("#clickme").click(function() {
+    $("#clickme").addClass("blue").css("text-align", "center");
+  });
+  $("#clickthis").click(function() {
+    $("#clickthis").css("background-color", "yellow").css("color", "gray").css("text-align", "center");
+  });
+  $(".rand").click(function() {
+    $(".rand").css("background-color", "gray");
+  });
+
 }
-function clickHandler() {
-  this.setAttribute("class", "blue");
-}
+  // $("#clickme").click(clickHandler);
+
+
+// function clickHandler() {
+//   $("#clickme").addClass("blue");
+//   // this.setAttribute("class", "blue");
+// }
+
+// window.onload = init;
+
+// javascript
+// platinum
+// function init () {
+//   var div = document.getElementById("clickme");
+//   div.onclick = clickHandler;
+// }
+// function clickHandler() {
+//   this.setAttribute("class", "blue");
+// }
 
 // gold?
 // function init () {
