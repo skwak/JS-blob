@@ -1,0 +1,66 @@
+window.onload = init;
+listArray = [];
+
+function init() {
+  var buttonForm = document.getElementById("addButton");
+  buttonForm.onclick = function() {
+    submit(event);
+  };
+}
+
+function submit(event) {
+  event.preventDefault();
+  var newTask = document.getElementById("task");
+  var newListItem = document.createElement("li");
+  newListItem.setAttribute("class", "yellow not-done");
+  newListItem.setAttribute("onclick", "markDone()");
+  newListItem.innerHTML = newTask.value;
+  listArray.push(newTask.value);
+  // may not need this
+  newListItem.setAttribute("id", "task" + listArray.length);
+  list.appendChild(newListItem);
+  // item.onmousedown = markDone();
+}
+
+
+
+
+function markDone() {
+  var item = document.getElementsByClassName("yellow not-done")[0];
+  item.onclick = function(){
+    item.setAttribute("class", "blue done");
+  };
+
+}
+
+
+// tasks triggered by image click
+// function init() {
+//   var catImage = document.getElementById("cat");
+//   catImage.onclick = addStuff;
+// }
+//
+// function addStuff() {
+//   var catImage = document.getElementById("cat");
+//   var answer = prompt("What do you want to add to the list?");
+//   var newListItem = document.createElement("li");
+//   newListItem.innerHTML = answer;
+//
+//   list.appendChild(newListItem);
+//
+// }
+
+
+// tasks triggered by prompts
+// function init() {
+//   var list = document.getElementById("list");
+//
+//     for(var i=0; i < 3; i++) {
+//
+//     var prompted_item = prompt("What do you want to add to the list?");
+//     var newListItem = document.createElement("li");
+//     newListItem.innerHTML = prompted_item;
+//
+//     list.appendChild(newListItem);
+//   }
+// }
