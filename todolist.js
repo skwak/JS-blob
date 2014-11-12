@@ -9,8 +9,13 @@ $(function() {
 function submit(event) {
   event.preventDefault();
   var $task = $("#task").val();
-  $("#list").append("<li class='not-done'>" + $task + "</li>");
-  $("li").click(clickHandler);
+  if ($task.length === 0) {
+    alert("You must write in a task!");
+  }
+  else {
+    $("#list").append("<li class='not-done'>" + $task + "</li>");
+    $("li").click(clickHandler);
+  }
 }
 
 function clickHandler() {
