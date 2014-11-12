@@ -5,12 +5,24 @@
   <title>Ada To Do list</title>
 </head>
 <style>
+
+  body {
+    font-family: "Helvetica Neue";
+    font-size: 1.2em;
+  }
+
   .blue {
     background-color: #04ceee;
   }
+
   .yellow {
     background-color: #fdd547;
   }
+
+  ul li {
+    list-style-type: none;
+  }
+
 </style>
 
 <script>
@@ -29,29 +41,25 @@ function submit(event) {
   var newTask = document.getElementById("task");
   var newListItem = document.createElement("li");
   newListItem.setAttribute("class", "yellow not-done");
-  newListItem.innerHTML = "<input type='checkbox', name='list-item' value='list-task'>" + newTask.value;
+  newListItem.setAttribute("onclick", "markDone()");
+  newListItem.innerHTML = newTask.value;
   listArray.push(newTask.value);
-  newListItem.setAttribute("id", "checkbox" + listArray.length);
+  // may not need this
+  newListItem.setAttribute("id", "task" + listArray.length);
   list.appendChild(newListItem);
-  if (listArray.length === 1) {
-    var doneButton = document.getElementById("place-button");
-    var checkButton = document.createElement("p");
-    doneButton.innerHTML = "<button id='done-button'>Mark as done</button>";
-    doneButton.appendChild(checkButton);
-    doneButton.onclick = markDone;
-  }
+  // item.onmousedown = markDone();
 }
+
 
 
 
 function markDone() {
-  alert("mark done?");
-
+  var item = document.getElementsByClassName("yellow not-done")[0];
+  item.onclick = function(){
+    item.setAttribute("class", "blue done");
+  }
 
 }
-
-
-
 
 
 // tasks triggered by image click
