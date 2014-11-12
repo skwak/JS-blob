@@ -19,7 +19,10 @@ function submit(event) {
 }
 
 function clickHandler() {
-  $(this).toggleClass("done").toggleClass("not-done").toggleClass("pink");
+  if ($(this).hasClass("not-done")) {
+    $(this).toggleClass("done").removeClass("not-done");
+  }
+
   if ($("li").length === $(".done").length) {
     var response = prompt("Do you want to remove all items in the list?");
     if (response === "y" || response === "yes" || response === "Y" || response === "YES") {
@@ -27,7 +30,6 @@ function clickHandler() {
     }
   }
 }
-
   // $("li").toggleClass(function(){
   //   if ($(this).parent().is ("not-done")) {
   //     $(this).addClass("done");
