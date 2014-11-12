@@ -10,20 +10,18 @@ function submit(event) {
   event.preventDefault();
   var $task = $("#task").val();
   $("#list").append("<li class='not-done'>" + $task + "</li>");
-  $(".not-done").click(function() {
-    $(this).toggleClass("done").toggleClass("pink");
-    var listItems = document.querySelectorAll("li");
-    var doneItems = document.querySelectorAll(".done");
-    if (listItems.length === doneItems.length) {
-      var response = prompt("Do you want to remove all items in the list?");
-      if (response === "y" || response === "yes" || response === "Y" || response === "YES") {
-        $("li").empty();
-      }
-    }
-  });
+  $("li").click(clickHandler);
 }
 
-
+function clickHandler() {
+  $(this).toggleClass("done").toggleClass("not-done").toggleClass("pink");
+  if ($("li").length === $(".done").length) {
+    var response = prompt("Do you want to remove all items in the list?");
+    if (response === "y" || response === "yes" || response === "Y" || response === "YES") {
+      $("li").empty();
+    }
+  }
+}
 
   // $("li").toggleClass(function(){
   //   if ($(this).parent().is ("not-done")) {
