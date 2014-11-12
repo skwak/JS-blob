@@ -10,7 +10,7 @@ $(function() {
   });
   $(".rand").click(function() {
     $(this).css("background-color", "green").fadeOut("slow", function() {
-      $(this).fadeIn("fast");
+      $(this).fadeIn("fast").css("text-align", "center");
     });
   });
 });

@@ -1,37 +1,75 @@
-window.onload = init;
-listArray = [];
-
-function init() {
-  var buttonForm = document.getElementById("addButton");
-  buttonForm.onclick = function() {
+// start jQuery
+$(function() {
+  var $addButton = $("#addButton");
+  $addButton.click(function() {
     submit(event);
-  };
-}
+  });
+});
 
 function submit(event) {
   event.preventDefault();
-  var newTask = document.getElementById("task");
-  var newListItem = document.createElement("li");
-  newListItem.setAttribute("class", "yellow not-done");
-  newListItem.setAttribute("onclick", "markDone()");
-  newListItem.innerHTML = newTask.value;
-  listArray.push(newTask.value);
-  // may not need this
-  newListItem.setAttribute("id", "task" + listArray.length);
-  list.appendChild(newListItem);
-  // item.onmousedown = markDone();
+  var $task = $("#task").val();
+  $("#list").append("<li class='not-done blue'>" + $task + "</li>");
+  $(".not-done").click(function() {
+    $(this).toggleClass("done").toggleClass("yellow");
+    var listItems = document.querySelectorAll("li");
+    var doneItems = document.querySelectorAll(".done");
+    if (listItems.length === doneItems.length) {
+      var response = prompt("Do you want to remove all items in the list?");
+      if (response === "y" || response === "yes" || response === "Y" || response === "YES") {
+        $("li").empty();
+      }
+    }
+  });
 }
 
 
 
+  // $("li").toggleClass(function(){
+  //   if ($(this).parent().is ("not-done")) {
+  //     $(this).addClass("done");
+  //   }
+  //   else {
+  //     $(this).removeClass("done");
+  //     $(this).addClass("not-done");
+  //   }
+  // });
 
-function markDone() {
-  var item = document.getElementsByClassName("yellow not-done")[0];
-  item.onclick = function(){
-    item.setAttribute("class", "blue done");
-  };
-
-}
+// semi-working JavaScript
+// window.onload = init;
+// listArray = [];
+//
+// function init() {
+//   var buttonForm = document.getElementById("addButton");
+//   buttonForm.onclick = function() {
+//     submit(event);
+//   };
+// }
+//
+// function submit(event) {
+//   event.preventDefault();
+//   var newTask = document.getElementById("task");
+//   var newListItem = document.createElement("li");
+//   newListItem.setAttribute("class", "yellow not-done");
+//   newListItem.setAttribute("onclick", "markDone()");
+//   newListItem.innerHTML = newTask.value;
+//   listArray.push(newTask.value);
+//   // may not need this
+//   newListItem.setAttribute("id", "task" + listArray.length);
+//   list.appendChild(newListItem);
+//   // item.onmousedown = markDone();
+// }
+//
+//
+//
+//
+// function markDone() {
+//   var item = document.getElementsByClassName("yellow not-done")[0];
+//   item.onclick = function(){
+//     item.setAttribute("class", "blue done");
+//   };
+//
+// }
 
 
 // tasks triggered by image click
