@@ -4,72 +4,23 @@
   <meta charset="utf-8">
   <title>todolist</title>
 </head>
-<style>
 
-  body {
-    font-family: "Helvetica Neue";
-    font-size: 1.2em;
-    margin-left: 5em;
-  }
-
-  h1, a {
-    text-decoration: none;
-    color: rgb(183, 237, 235);
-    font-size: 3em;
-  }
-
-  .not-done {
-    background-color: rgb(183, 237, 235);
-  }
-
-  .done {
-    background-color: #faeff5;
-  }
-
-  ul li {
-    list-style-type: none;
-    width:15em;
-    height:1.3em;
-    margin-left: 1em;
-    margin-top: 1em;
-    border-top: 1px solid #000000;
-    text-align:center;
-    font-size: 2em;
-  }
-
-  button {
-    font-family: "Helvetica Neue";
-    font-size: 1.3em;
-    background-color: #edeaea;
-    border: none;
-  }
-
-  input[type="text"] {
-    border: 1px solid #00000;
-    font-size: 2em;
-    padding: 1px;
-    width: 10em;
-
-}
-
-</style>
-
+<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script src="todolist.js">
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 
-</script>
+<link rel="stylesheet" href="todolist.css">
+<script src="todolist.js"></script>
 
 <body>
 <h1><a href="">todolist</a></h1>
 
 <form>
-  <input type="text" id="task"><br><br>
+  <input type="text" id="task" placeholder="buy bday gift"><br><br>
   <button id="addButton">Add Task</button>
 </form>
 
-<ul id="list">
-
-</ul>
+<ul id="list"></ul>
 
 </body>
 

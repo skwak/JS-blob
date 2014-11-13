@@ -1,7 +1,6 @@
 // start jQuery
 $(function() {
-  var $addButton = $("#addButton");
-  $addButton.click(function() {
+  $("#addButton").click(function() {
     submit(event);
   });
 });
@@ -13,10 +12,20 @@ function submit(event) {
     alert("You must write in a task!");
   }
   else {
-    $("#list").append("<li class='not-done'>" + $task + "</li>").hide().fadeIn("slow");
+    $('input[type=text]').each(function() {
+         $(this).val('');
+   });
+    var listAddition = "<li class='not-done'>" + $task + "</li><button class='removeButton'>remove</button>";
+    $("#list").append(listAddition).hide().fadeIn("slow");
     $("li").click(clickHandler);
+    $(".removeButton").click(clickRemove);
   }
 }
+
+// function clickRemove() {
+//   $(this).closest().remove();
+//   $(this).remove();
+// }
 
 function clickHandler() {
   if ($(this).hasClass("not-done")) {
@@ -30,6 +39,7 @@ function clickHandler() {
     }
   }
 }
+
   // $("li").toggleClass(function(){
   //   if ($(this).parent().is ("not-done")) {
   //     $(this).addClass("done");

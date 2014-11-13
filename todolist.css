@@ -1,0 +1,64 @@
+body {
+  font-family: "Helvetica Neue";
+  font-size: 1.2em;
+  margin-left: 5em;
+}
+
+h1 {
+  text-shadow: .05em .05em #909590;
+}
+
+h1, a {
+  text-decoration: none;
+  color: rgb(183, 237, 235);
+  font-size: 3em;
+}
+
+.not-done {
+  background-color: rgb(183, 237, 235);
+}
+
+.done {
+  background-color: #faeff5;
+  text-decoration: line-through;
+}
+
+ul li {
+  list-style-type: none;
+  width:15em;
+  height:1.3em;
+  margin-left: 1em;
+  margin-top: 1em;
+  border-bottom: 1px solid #909590;
+  text-align:center;
+  font-size: 2em;
+}
+
+ul {
+  margin-right: 0;
+  float: left;
+}
+
+button {
+  font-family: "Helvetica Neue";
+  background-color: #edeaea;
+  border: none;
+}
+
+.removeButton {
+  font-size: 1em;
+  margin-left: 0;
+  float: right;
+}
+
+#addButton {
+  font-size: 1.3em;
+}
+
+input[type="text"] {
+  border: 1px solid #00000;
+  font-size: 2em;
+  padding: 1px;
+  width: 10em;
+
+}
