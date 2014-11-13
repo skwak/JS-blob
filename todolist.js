@@ -13,7 +13,7 @@ function submit(event) {
     alert("You must write in a task!");
   }
   else {
-    $("#list").append("<li class='not-done'>" + $task + "</li>");
+    $("#list").append("<li class='not-done'>" + $task + "</li>").hide().fadeIn("slow");
     $("li").click(clickHandler);
   }
 }
@@ -25,8 +25,8 @@ function clickHandler() {
 
   if ($("li").length === $(".done").length) {
     var response = prompt("Do you want to remove all items in the list?");
-    if (response === "y" || response === "yes" || response === "Y" || response === "YES") {
-      $("li").empty();
+    if ((response === "y") || (response === "yes") || (response === "Y") || (response === "YES")) {
+      $("li").empty().fadeOut("fast");
     }
   }
 }

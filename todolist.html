@@ -9,28 +9,48 @@
   body {
     font-family: "Helvetica Neue";
     font-size: 1.2em;
+    margin-left: 5em;
+  }
+
+  h1, a {
+    text-decoration: none;
+    color: #000;
+    font-size: 3em;
   }
 
   .not-done {
-    background-color: #a8d9de;
+    background-color: #e4ffff;
   }
 
   .done {
-    background-color: #f7cfe5;
+    background-color: #faeff5;
   }
 
   ul li {
     list-style-type: none;
     width:15em;
+    height:1.3em;
+    margin-left: 1em;
+    margin-top: 1em;
     border-top: 1px solid #000000;
+    text-align:center;
+    font-size: 2em;
   }
 
   button {
     font-family: "Helvetica Neue";
-    font-size: .7em;
-    background-color: #ffffff;
-    border-width: .1em;
+    font-size: 1em;
+    background-color: #edeaea;
+    border: none;
   }
+
+  input[type="text"] {
+    border: 1px solid #00000;
+    font-size: 2em;
+    padding: 1px;
+    width: 10em;
+
+}
 
 </style>
 
@@ -40,10 +60,10 @@
 </script>
 
 <body>
-<h1>todolist</h1>
+<h1><a href="/">todolist</a></h1>
 
 <form>
-  <input type="text" id="task">
+  <input type="text" id="task"><br><br>
   <button id="addButton">Add Task</button>
 </form>
 
