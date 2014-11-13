@@ -12,8 +12,8 @@ function submit(event) {
     alert("You must write in a task!");
   }
   else {
-    $('input[type=text]').each(function() {
-         $(this).val('');
+    $("input[type=text]").each(function() {
+         $(this).val("");
    });
     var listAddition = "<li class='not-done'>" + $task + "</li>";
     // <button class='removeButton'>remove</button>
