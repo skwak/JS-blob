@@ -15,20 +15,19 @@ function submit(event) {
     $("input[type=text]").each(function() {
          $(this).val("");
    });
-    var listAddition = "<li class='not-done'>" + $task + "</li>";
-    // <button class='removeButton'>remove</button>
+    var listAddition = "<li class='not-done'>" + $task + "<button class='removeButton'>remove</button></li>";
     $("#list").append(listAddition).hide().fadeIn("slow");
     $("#list").sortable();
     $("li").click(clickHandler);
-    // $(".removeButton").click(clickRemove);
+    $(".removeButton").click(clickRemove);
   }
 }
-//
-// Add a button to each task to remove the task from the list
-// function clickRemove() {
-//   $(this).closest().remove();
-//   $(this).remove();
-// }
+
+function clickRemove(event) {
+  event.stopPropagation();
+  $(this).closest("li").remove();
+
+}
 
 function clickHandler() {
   if ($(this).hasClass("not-done")) {

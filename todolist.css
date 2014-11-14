@@ -4,6 +4,9 @@ body {
   margin-left: 5em;
 }
 
+#container {
+  width: 100%;
+}
 h1 {
   text-shadow: .05em .05em #909590;
 }
@@ -46,9 +49,10 @@ button {
 }
 
 .removeButton {
-  font-size: 1em;
+  font-size: .5em;
   margin-left: 0;
   float: right;
+  border-radius: .2em;
 }
 
 #addButton {
