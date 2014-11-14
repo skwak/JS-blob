@@ -32,9 +32,9 @@ ul li {
   height:1.3em;
   margin-left: 1em;
   margin-top: 1em;
-  border-bottom: 1px solid #909590;
   text-align:center;
   font-size: 2em;
+  box-shadow: 5px 5px 5px #bacfcc;
 }
 
 ul {
