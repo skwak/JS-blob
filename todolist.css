@@ -48,10 +48,17 @@ button {
   border: none;
 }
 
-.removeButton {
-  font-size: .5em;
+.right {
   margin-left: 0;
   float: right;
+}
+
+.removeButton {
+  margin-right: 1em;
+  border-radius: .2em;
+}
+
+.showButton {
   border-radius: .2em;
 }
 
