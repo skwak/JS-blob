@@ -15,12 +15,12 @@ function submit(event) {
     $("input[type=text]").each(function() {
          $(this).val("");
    });
-    var listAddition = "<li class='not-done'>" + $task + "<div class='right'><button class='removeButton'>remove</button><button class='showButton'>show task</button></div></li>";
+    var listAddition = $("<li class='not-done'>" + $task + "<div class='right'><button class='removeButton'>remove</button><button class='showButton'>.</button></div></li>");
     $("#list").append(listAddition).hide().fadeIn("slow");
     $("#list").sortable();
     $("li").click(clickHandler);
-    $(".removeButton").click(clickRemove);
-    $(".showButton").click(clickToShow);
+    $(listAddition).find(".removeButton").click(clickRemove);
+    $(listAddition).find(".showButton").click(clickToShow);
   }
 }
 
@@ -31,10 +31,11 @@ function clickRemove(event) {
 
 function clickToShow(event) {
   event.stopPropagation();
-  $("li").not($(this).closest("li")).hide();
-  $(this).closest("li").css("font-size", "3em");
-
+  $(this).closest("li").toggleClass("bigButton");
+  $("li").not($(this).closest("li")).toggleClass("hide");
+  console.log("blah");
 }
+
 function clickHandler() {
   if ($(this).hasClass("not-done")) {
     $(this).toggleClass("done").removeClass("not-done");

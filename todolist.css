@@ -53,6 +53,10 @@ button {
   float: right;
 }
 
+.hide {
+  display: none;
+}
+
 .removeButton {
   margin-right: 1em;
   border-radius: .2em;
@@ -60,6 +64,10 @@ button {
 
 .showButton {
   border-radius: .2em;
+}
+
+.bigButton {
+  font-size: 3em;
 }
 
 #addButton {
